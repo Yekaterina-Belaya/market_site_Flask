@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Registration
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container" style="width:500px">
+        <form method="POST" class="form-register" style="color:white">
+            {{ form.hidden_tag() }}
+            <div style="text-align:center">
+                <img style="width:100px;" class="mt-4" src="https://www.pngall.com/wp-content/uploads/5/Profile-Male-Transparent.png" alt="a">
+            </div>
+            <h1 class="h5 mb-3 font-weight-normal">Create Account</h1>
+            <br>
+
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="create a username...") }}
+            <br>
+            {{ form.email.label() }}
+            {{ form.email(class="form-control", placeholder="fill in your email address...") }}
+            <br>
+            {{ form.password1.label() }}
+            {{ form.password1(class="form-control", placeholder="create a password...") }}
+            <br>
+            {{ form.password2.label() }}
+            {{ form.password2(class="form-control", placeholder="repeat the password...") }}
+            <br>
+
+            <div class="checkbox mb-3">
+                <h6>Already have an account?</h6>
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+        </form>
+    </div>
+</body>
+    {% endblock %}
